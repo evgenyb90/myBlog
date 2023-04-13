@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Adding an article
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Adding an article</h1>
+    <form action="/create-article" method="post">
+        <input type="text" name="title" id="Title" placeholder="Title" class="form-control"> <br>
+        <textarea name="intro" id="intro" placeholder="Intro" class="form-control"></textarea>  <br>      
+        <textarea name="text" id="text" placeholder="..." class="form-control"></textarea>  <br>
+        <input type="submit" class="btn btn-success" value="Send">  
+    </form>
+</div>
+{% endblock %}
