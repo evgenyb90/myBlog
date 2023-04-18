@@ -7,11 +7,19 @@ Updating an article
 {% block body %}
 <div class="container">
     <h1>Updating an article</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input type="text" name="title" id="Title" placeholder="Title" class="form-control" value="{{ article.title }}"> <br>
         <textarea name="intro" id="intro" placeholder="Intro" class="form-control">{{ article.intro }}</textarea>  <br>      
         <textarea name="text" id="text" placeholder="..." class="form-control">{{ article.text }}</textarea>  <br>
-        <input type="submit" class="btn btn-success" value="Modify">  
+        {% if article.picture %}
+        <img src="{{ url_for('static', filename='uploads/' + article.picture) }}" alt="article picture" class="img-fluid">
+        <br>
+        <label for="delete-picture">Delete Picture:</label>
+        <input type="checkbox" name="delete-picture" id="delete-picture"><br>
+        {% endif %}
+        <label for="picture">Replace Picture:</label>
+        <input type="file" name="picture" id="picture"><br>
+        <input type="submit" class="btn btn-success btn-send" value="Modify">  
     </form>
 </div>
 {% endblock %}

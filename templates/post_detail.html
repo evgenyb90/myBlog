@@ -9,6 +9,11 @@
     <h1>{{ article.title }}</h1>
     
     <div class="alert alert-info">
+        {% if article.picture %}
+        
+        <img src="{{ url_for('static', filename='uploads/' + article.picture) }}" alt="{{ article.title }}" class="img-fluid">
+        
+        {% endif %}
         <p>{{ article.text }}</p>
         <p><b>Date: {{ article.date.date() }}</b></p>
         <a href="/posts/{{ article.id }}/delete" class="btn btn-danger">Delete</a>

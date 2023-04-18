@@ -1,0 +1,19 @@
+.container {
+    padding-top: 10px;
+}
+
+.btn-send {
+    margin-top: 15px;
+}
+
+h4 {
+    margin-bottom: 20px;
+}
+
+.btn-warning {
+    background-color: rgb(243, 169, 215);
+}
+
+.btn {
+    margin-bottom: 10px;
+}

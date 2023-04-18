@@ -7,11 +7,12 @@ Adding an article
 {% block body %}
 <div class="container">
     <h1>Adding an article</h1>
-    <form action="/create-article" method="post">
+    <form action="/create-article" method="post" enctype="multipart/form-data">
         <input type="text" name="title" id="Title" placeholder="Title" class="form-control"> <br>
         <textarea name="intro" id="intro" placeholder="Intro" class="form-control"></textarea>  <br>      
         <textarea name="text" id="text" placeholder="..." class="form-control"></textarea>  <br>
-        <input type="submit" class="btn btn-success" value="Send">  
+        <input type="file" name="picture" class="form-control-file" accept="image/*"> <br>
+        <input type="submit" class="btn btn-success btn-send" value="Send">  
     </form>
 </div>
 {% endblock %}
